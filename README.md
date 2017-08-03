@@ -1,8 +1,6 @@
 # UX2: Universal Extension Bus
 
-UX2 is an open source pinout for a board-to-board communication bus, primarily intended for use in digital electronic devices which utilise energy harvesting.
-
-It is a derivative and extension of the open source [UEXT Bus](https://www.olimex.com/Products/Modules/UEXT/resources/UEXT_rev_B.pdf) by [Olimex](https://www.olimex.com/).
+UX2 is an open source pinout for a board-to-board communication bus; a derivative and extension of the open source [UEXT Bus](https://www.olimex.com/Products/Modules/UEXT/resources/UEXT_rev_B.pdf) by [Olimex](https://www.olimex.com/).
 
 ## The Pinout
 
@@ -21,7 +19,7 @@ Standard 10-pin UEXT connectors fit in the middle (the grey section shown on the
 
 The additional pins aded by UX2 are:
 
-* Left: [1-Wire](https://www.wikiwand.com/en/1-Wire) and [Interupt](https://www.wikiwand.com/en/Interrupt)
+* Left: [1-Wire](https://www.wikiwand.com/en/1-Wire) and [Interrupt](https://www.wikiwand.com/en/Interrupt)
     * Either pin can be repurposed as GPIO
 * Right: [Sound-Wire](https://www.mipi.org/specifications/soundwire)
     * If Sound-Wire is not used, the pins can be repurposed as an additional I2C
