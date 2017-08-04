@@ -2,79 +2,126 @@
 
 > UNDER CONSTRUCTION - LIABLE TO CHANGE
 
-UX2 is an open source board-to-board communication bus which supports:
+UX2 is an open source, connector-agnostic, board-to-board communication bus which supports the following protocols (depending on pin variant):
 
-* [1-Wire](https://www.wikiwand.com/en/1-Wire)
-* [Interrupt](https://www.wikiwand.com/en/Interrupt) – wake master/host MCU on slave/module interrupt
+* [GPIO](https://www.wikiwand.com/en/General-purpose_input/output) – General Purpose Input/Output
+* [1-Wire](https://www.wikiwand.com/en/1-Wire) – for lowest possible wire count to remote circuits or sensors
+* [Interrupt](https://www.wikiwand.com/en/Interrupt) – wake master/host MCU via slave/module triggered interrupt
 * [Async](https://www.wikiwand.com/en/Asynchronous_serial_communication)
 * [I2C](https://www.wikiwand.com/en/I%C2%B2C)
 * [SPI](https://www.wikiwand.com/en/Serial_Peripheral_Interface_Bus)
 * [Sound-Wire](https://www.mipi.org/specifications/soundwire)
 
-In addition, some pins can be repurposed as [GPIO](https://www.wikiwand.com/en/General-purpose_input/output) or an additional I2C (to avoid using [I2C address changers](http://hackaday.com/2017/02/17/ltc4316-is-the-i2c-babelfish/)).
-
 ## Quick Reference
 
-There are two variants: UX2 (fully compatible with [UEXT](https://www.wikiwand.com/en/UEXT)), and Micro UX2 (device-dependent implementation):
+There are four variants which determine the function of the outer pins...
 
-![UX2 Pinout](./UX2_Pinout.png)
+**UX2-GPIO** – four GPIO
+![UX2-GPIO](./ux2-gpio.png)
 
-### Pins
+**UX2-ALT** – two GPIO, one addtional I2C
+![UX2-ALT](./ux2-alt.png)
+
+**UX2-1IS** – 1-Wire, Interrupt and Sound-Wire
+![UX2-1IS](./ux2-1is.png)
+
+**UX2-I2C** – two additional I2C
+![UX2-I2C](./ux2-i2c.png)
+
+### Pin reference
 
 * `1W` – 1-Wire data pin, to be used in conjunction with the `GND` pin
 * `INT` – Interrupt, allowing sensors to trigger an interrupt on host/master MCU
+* `Gx` - GPIO, where `x` is interface number (`0`, `1`, `2`, `3`) depending on pin variant
 * `GND` – Ground pin (0V)
 * `3V3` – 3.3V power supply; max 100mA draw (UX2, UEXT) or implementation-dependent (Micro UX2)
 * `RXD`, `TXD` – Async interface
-* `SDA`, `SCL` – I2C interface
+* `SDAx`, `SCLx` – I2C interface, where `x` is interface number (`0`, `1`, `2`) depending on pin variant
 * `MOSI`, `MISO`, `SSEL` (slave select), `SCK` - SPI interface
 * `SWD`, `SWC` – Sound-Wire interface
 
-### Pin Variants
+### Jumper suggestion
 
-* **UX2** – standard pin config as described above, with no modifications
-* **UX2-OPT** - the following pins can be _optionally_ repurposed:
-    * `1W`, `INT` -> `G0`, `G1`
-    * `SWD`, `SWC` -> I2C (`SDA2`, `SCL2`)
-* **UX2-GPIO** – OPT pins all repurposed as GPIOs (4 GPIOs in total):
-    * `1W`, `INT` -> `G0`, `G1`
-    * `SWD`, `SWC` -> `G2`, `G3`
-* **UX2-I2C** – OPT pins all repurposed as I2C (3 I2C interfaces in total):
-    * `1W`, `INT` -> `SDA1`, `SCL1`
-    * `SWD`, `SWC` -> `SDA2`, `SCL2`
+With 4 variants, it is possible to allow on-board variant selection via 2 jumpers connected to host MCU:
 
+* 0 0 = UX2-GPIO
+* 0 1 = UX2-ALT
+* 1 0 = UX2-1IS
+* 1 1 = UX2-I2C
 
-### UX2, UEXT
+## Compatibility
 
-The larger UX2 bus is an extension to, and thus fully compatible with, a UEXT bus; 10-pin UEXT connectors fit in the middle (the grey section shown on the pinout diagram above) of the 14-pin UX2 socket, leaving the additional UX2 pins (`1W`, `INT`, `SWD` and `SWC`) exposed either side of the UEXT connector.
+The UX2 bus is compatible with a range of 3rd party buses...
 
-The host/master board must ensure the UEXT pins adhere to the [UEXT specifications](https://www.olimex.com/Products/Modules/UEXT/resources/UEXT_rev_B.pdf) so that existing UEXT modules ([like these](https://www.olimex.com/Products/Modules/)) can be used.
+> **Note:** Remember that UX2 is 3.3V based; don't connect to 5V rails as you risk causing damage to the host/master!
 
-### Micro UX2
+### Olimex UEXT modules
 
-The Micro UX2 bus is a variant that has all the same pins as UX2, but with some notable differences:
+For full compatibility with [UEXT](https://www.wikiwand.com/en/UEXT)) [modules](https://www.olimex.com/Products/Modules/), an IDC socket should be used as illustrated below:
 
-* It's connector-agnostic 
-    * The host/master PCB has complete freedom to use any type of connector; useful when there's space or cost constraints, or other factors that would make the normal UX2 connector infeasible
-    * For example, you could use [pin header](https://www.wikiwand.com/en/Pin_header) and [jumper wires](https://www.wikiwand.com/en/Jump_wire), or [ZIF connectors](https://www.wikiwand.com/en/Zero_insertion_force) and [flexible flat cable](https://www.wikiwand.com/en/Flexible_flat_cable)...
-* All pins, except `GND` and `3V3`, are disabled by default
-    * Saves power and complexity in host/master circuits that use energy harvesting or have limited MCU capacity
-    * Features are enabled on an as-needed basis, either via jumpers, configurations or software; you decide how that works
-* The max current on the `3V3` pin is implementation-dependent
-    * Specification is defined by what the host/master can provide rather than what the module/slave expects
-    * Particularly useful for host/master circuits that use energy harvesting or some other limited form of power
+![UX2-IDC](./ux2-idc.png)
 
-## Background
+This ensures the 5x2 pin UEXT connector is inserted correctly in the middle of the 7x2 UX2 socket.
 
-I wanted to facilitate end-user modding of a sensor project I was working on, and was originally planning to use UEXT bus – until it became apparent that some extra features were required (interrupt and sound-wire), hence the birth of UX1.
+As pin variants only affect the outer pins, which are external to the UEXT bus, you can safely use any of the pin variants whilst retaining full compatibility with UEXT.
 
-UX1 initially had the 4 additional pins to the right of the SPI interface, with one of the pins being unused. While searching for suitable sockets it quickly became apparent that this configuration wasn't compatible with UEXT modules - unless the IDC sheath was removed from the socket (at which point cable could be put in wrong way round = doom). To rectify this, the unused and interrupt pins were moved over to the left allowing compatibility with 10-pin UEXT plugs and also 14-pin plugs for what is now known as UX2.
+The host/master board must ensure the UEXT pins adhere to the [UEXT specifications](https://www.olimex.com/Products/Modules/UEXT/resources/UEXT_rev_B.pdf); for example, the `3V3` pin should be able to supply 100mA of current.
 
-During prototyping, I realised the 14-pin IDC connectors are bulky af, so Micro UX2 was born. In addition, with the circuit relying on energy harvesting, which also mandated lower power and smaller capacity MCU, the specs for Micro UX2 were changed to have everything disabled by default.
+### Adafruit breakout boards
 
-Finally, there were a few sensors that used 1-wire so that last unused pin suddenly found it's vocation - the fact that it was seated right next to `GND` is surely proof that this was its destiny. As many mods won't require 1-wire, sound-wire or even interrupts in many cases, it was decided to allow some limited pin repurposing to GPIO (for 1-wire and interrupt pins) and I2C (for the sound-wire pins).
+For best compatibility with [Adafruit breakouts](https://www.adafruit.com/category/42), use the **UX2-GPIO pin variant** with the following wiring:
 
-I decided to document it all while it was all still fresh in my mind, hence this github project! If you find it useful or incorporate it in one of your projects, please let me know (via issues tab above) :)
+* `3V3` usually connects to breakout `Vin` or `Vcc`
+* `GND` connects to breakout `GND`
+* Connect Async, I2C and SPI interfaces to breakout, where applicable
+* For any remaining connections, use the GPIO (`Gx`) pins
+
+### [Sparkfun sensor boards](https://www.sparkfun.com/categories/23)
+
+Use the **UX2-GPIO pin variant** with the following wiring:
+
+* `3V3` usually connects to sensor `3V3` or `Vcc`
+* `GND` connects to sensor `GND`
+* Connect Async, I2C and SPI interfaces to breakout, where applicable
+* For any remaining connections, use the GPIO (`Gx`) pins
+
+Remember that the GPIO pins can only be used once. For example, you can't connect `G0` to 3 different sensor boards, you can only connect it to one board. Similarly, the Async interface can only be connected to at most one board.
+
+If you want to connect lots of Sparkfun sensors, try and use boards that rely exclusively on I2C or SPI as those protocols are chainable. Depending on which boards you use, you might find the **UX2-I2C pin variant** a better match for your needs.
+
+### [DFRobot Gravity modules](https://www.dfrobot.com/category-36.html)
+
+Use the **UX2-GPIO pin variant**, which will allow you to connect up to 4 Gravity modules with the following wiring:
+
+* `Gx` (GPIO) connects to the Gravity outer green wire (Signal)
+* `3V3` connects to the Gravity middle red wire (Voltage or Vcc)
+* `GND` connects to the Gravity outer black wire (Ground)
+
+A common bus format for Gravity modules is to have three rows of male header (green, red, black) with each column (3 pins) being an interface to a single Gravity module.
+
+### I2C devices
+
+If you require separate I2C interfaces (eg. to different sections of a circuit, or because you have multiple components with the same I2C ID), use the **UX2-I2C pin variant**, otherwise use one of the other variants.
+
+When chaining multiple I2C devices on the same interface, remember to keep track of power consumption on the `3V3` pin.
+
+### 1-Wire devices
+
+Use the **UX2-1IS pin variant**, with the following wiring:
+
+* `1W` connects to the `1-Wire` pin on the device
+* `GND` connects to the `GND` pin on the device
+
+1-Wire devices usually operate at either 3V or 5V. As such, the 3.3V offered by UX2 bus might need stepping up or down to accommodate. 1-Wire devices are often powered by putting an 800pF capacitor between their `1-Wire` and `GND` pins.
+
+### Sound-Wire Circuits
+
+Use the **UX2-1IS pin variant**, with following wiring:
+
+* `SWD` connects to `Data`
+* `SWC` connects to `Clock` or `Clk`
+
+Note: In circuit schematics, the clock connections are often omitted for sake of clarity (focus is on the data); the clock connection is always required regardless.
 
 ## License
 
