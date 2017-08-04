@@ -106,7 +106,7 @@ A common bus format for Gravity modules is to have three rows of male header (gr
 
 Any of the pin variants will suffice, unless you need additional I2C buses in which case use **UX2-I2C pin variant**.
 
-When chaining multiple I2C devices on the same interface, remember to keep track of power consumption on the `3V3` pin.
+Remember to keep track of power consumption on the `3V3` pin.
 
 ### 1-Wire devices
 
