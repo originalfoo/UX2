@@ -36,7 +36,7 @@ If pins are repurposed, it should be made clear to end-users that this is the ca
 
 ### UX2, UEXT
 
-The larger UX2 bus is an extension to, and thus fully compatible with, a UEXT bus; 10-pin UEXT connectors fit in the middle (the grey section shown on the pinout diagram above) of the 12-pin UX2 socket, leaving the additional UX2 pins (1-Wire, Interrupt, Sound-Wire) exposed either side of the UEXT connector.
+The larger UX2 bus is an extension to, and thus fully compatible with, a UEXT bus; 10-pin UEXT connectors fit in the middle (the grey section shown on the pinout diagram above) of the 14-pin UX2 socket, leaving the additional UX2 pins (1-Wire, Interrupt, Sound-Wire) exposed either side of the UEXT connector.
 
 The host/master board must ensure the UEXT pins adhere to the [UEXT specifications](https://www.olimex.com/Products/Modules/UEXT/resources/UEXT_rev_B.pdf) so that existing UEXT modules ([like these](https://www.olimex.com/Products/Modules/)) can be used.
 
@@ -58,9 +58,9 @@ The Micro UX2 bus is a variant that has all the same pins as UX2, but with some 
 
 I wanted to facilitate end-user modding of a sensor project I was working on, and was originally planning to use UEXT bus – until it became apparent that some extra features were required (interrupt and sound-wire), hence the birth of UX1.
 
-UX1 initially had the 4 additional pins to the right of the SPI interface, with one of the pins being unused. While searching for suitable sockets it quickly became apparent that this configuration wasn't compatible with UEXT modules - unless the IDC sheath was removed from the socket (at which point cable could be put in wrong way round = doom). To rectify this, the unused and interrupt pins were moved over to the left allowing compatibility with 10-pin UEXT plugs and also 12-pin plugs for what is now known as UX2.
+UX1 initially had the 4 additional pins to the right of the SPI interface, with one of the pins being unused. While searching for suitable sockets it quickly became apparent that this configuration wasn't compatible with UEXT modules - unless the IDC sheath was removed from the socket (at which point cable could be put in wrong way round = doom). To rectify this, the unused and interrupt pins were moved over to the left allowing compatibility with 10-pin UEXT plugs and also 14-pin plugs for what is now known as UX2.
 
-During prototyping, it became apparent that 12-pin IDC connectors are bulky af, so Micro UX2 was born. In addition, with the circuit relying on energy harvesting, which also mandated lower power and smaller capacity MCU, the specs for Micro UX2 were changed to have everything disabled by default.
+During prototyping, I realised the 14-pin IDC connectors are bulky af, so Micro UX2 was born. In addition, with the circuit relying on energy harvesting, which also mandated lower power and smaller capacity MCU, the specs for Micro UX2 were changed to have everything disabled by default.
 
 Finally, there were a few sensors that used 1-wire so that last unused pin suddenly found it's vocation - the fact that it was seated right next to `GND` is surely proof that this was its destiny. As many mods won't require 1-wire, sound-wire or even interrupts in many cases, it was decided to allow some limited pin repurposing to GPIO (for 1-wire and interrupt pins) and I2C (for the sound-wire pins).
 
