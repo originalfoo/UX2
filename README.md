@@ -1,5 +1,7 @@
 # UX2: Universal Extension Bus
 
+> UNDER CONSTRUCTION - LIABLE TO CHANGE
+
 UX2 is an open source board-to-board communication bus which supports:
 
 * [1-Wire](https://www.wikiwand.com/en/1-Wire)
@@ -20,19 +22,27 @@ There are two variants: UX2 (fully compatible with [UEXT](https://www.wikiwand.c
 ### Pins
 
 * `1W` – 1-Wire data pin, to be used in conjunction with the `GND` pin
-    * If 1-Wire is not required, this pin can be repurposed as a GPIO
 * `INT` – Interrupt, allowing sensors to trigger an interrupt on host/master MCU
-    * If interrupts are not required, this pin can be repurposed as a GPIO
 * `GND` – Ground pin (0V)
 * `3V3` – 3.3V power supply; max 100mA draw (UX2, UEXT) or implementation-dependent (Micro UX2)
 * `RXD`, `TXD` – Async interface
 * `SDA`, `SCL` – I2C interface
-* `MOSI`, `MISO`, `SSEL`, `SCK` - SPI interface
-    * `SSEL` = `SS` (Slave Select)
+* `MOSI`, `MISO`, `SSEL` (slave select), `SCK` - SPI interface
 * `SWD`, `SWC` – Sound-Wire interface
-    * If Sound-Wire is not required, these pins can be repurposed as an additional I2C interface
 
-If pins are repurposed, it should be made clear to end-users that this is the case – ideally with labelling on the PCB silk screen.
+### Pin Variants
+
+* **UX2** – standard pin config as described above, with no modifications
+* **UX2-OPT** - the following pins can be _optionally_ repurposed:
+    * `1W`, `INT` -> `G0`, `G1`
+    * `SWD`, `SWC` -> I2C (`SDA2`, `SCL2`)
+* **UX2-GPIO** – OPT pins all repurposed as GPIOs (4 GPIOs in total):
+    * `1W`, `INT` -> `G0`, `G1`
+    * `SWD`, `SWC` -> `G2`, `G3`
+* **UX2-I2C** – OPT pins all repurposed as I2C (3 I2C interfaces in total):
+    * `1W`, `INT` -> `SDA1`, `SCL1`
+    * `SWD`, `SWC` -> `SDA2`, `SCL2`
+
 
 ### UX2, UEXT
 
