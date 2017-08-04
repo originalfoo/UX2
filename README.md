@@ -30,15 +30,15 @@ There are four variants which determine the function of the outer pins...
 
 ### Pin reference
 
-* `1W` – 1-Wire data pin, to be used in conjunction with the `GND` pin
-* `INT` – Interrupt, allowing sensors to trigger an interrupt on host/master MCU
-* `Gx` - GPIO, where `x` is interface number (`0`, `1`, `2`, `3`) depending on pin variant
-* `GND` – Ground pin (0V)
-* `3V3` – 3.3V power supply; max 100mA draw (UX2, UEXT) or implementation-dependent (Micro UX2)
-* `RXD`, `TXD` – Async interface
-* `SDAx`, `SCLx` – I2C interface, where `x` is interface number (`0`, `1`, `2`) depending on pin variant
-* `MOSI`, `MISO`, `SSEL` (slave select), `SCK` - SPI interface
-* `SWD`, `SWC` – Sound-Wire interface
+* `1W` – **1-Wire** data pin, to be used in conjunction with the `GND` pin
+* `INT` – **Interrupt**, allowing sensors to trigger an interrupt on host/master MCU
+* `Gx` - **GPIO**, where `x` is interface number (`0`, `1`, `2`, `3`) depending on pin variant
+* `GND` – **Ground** pin (0V)
+* `3V3` – **3.3V** power output from master; max 100mA draw (UX2, UEXT) or implementation-dependent (Micro UX2)
+* `RXD`, `TXD` – **Async** interface
+* `SDAx`, `SCLx` – **I2C** interfaces, where `x` is interface number (`0`, `1`, `2`) depending on pin variant
+* `MOSI`, `MISO`, `SSEL` (slave select), `SCK` - **SPI** interface
+* `SWD`, `SWC` – **Sound-Wire** interface
 
 ### Pin variant selection
 
