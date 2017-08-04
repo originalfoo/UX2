@@ -40,14 +40,21 @@ There are four variants which determine the function of the outer pins...
 * `MOSI`, `MISO`, `SSEL` (slave select), `SCK` - SPI interface
 * `SWD`, `SWC` – Sound-Wire interface
 
-### Jumper suggestion
+### Pin variant selection
 
-With 4 variants, it is possible to allow on-board variant selection via 2 jumpers connected to host MCU:
+There are two common ways to set the pin variant:
+
+1. Hard-code via firmware on the MCU
+2. Physical jumpers or dip switches (see below)
+
+With 4 variants, it is possible to allow on-board variant selection with just two jumpers or dip switches connected to host MCU:
 
 * 0 0 = UX2-GPIO
 * 0 1 = UX2-ALT
 * 1 0 = UX2-1IS
 * 1 1 = UX2-I2C
+
+If you set up the circuit so that the four selections equate to specific voltages (eg. 0V, 1V, 2V, 3V) you would only need one ADC or GPIO pin on the MCU to determine the value of both jumpers.
 
 ## Compatibility
 
