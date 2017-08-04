@@ -60,23 +60,21 @@ If you set up the circuit so that the four selections equate to specific voltage
 
 The UX2 bus is compatible with a range of 3rd party buses...
 
-> **Note:** Remember that UX2 is 3.3V based; don't connect to 5V rails as you risk causing damage to the host/master!
+> **Note:** Remember UX2 is 3.3V based; higher voltages can damage host/master.
 
 ### [Olimex UEXT modules](https://www.olimex.com/Products/Modules/)
 
-A 7-way 2-row IDC socket should be used to accommodate both 7x2 (UX2) and 5x2 (UEXT; illustrated below) IDC plugs:
+A 7-way 2-row IDC socket accommodates both 5x2 (UEXT; illustrated below) and 7x2 (UX2) IDC plugs.
 
 ![UX2-IDC](./ux2-idc.png)
 
-This ensures a 5x2 pin UEXT connector is inserted correctly in the middle of the 7x2 UX2 socket. Alternatively, you could use a 5x2 socket and plug, and separate out the four outer UX2 pins (maybe with additional `GND` next to the `1W` if applicable).
-
-As pin variants only affect the outer pins, which are external to the UEXT bus, you can safely use any of the pin variants whilst retaining full compatibility with UEXT.
+As pin variants only affect the outer pins, which are external to the UEXT pins, you can safely use any of the pin variants whilst retaining full compatibility with UEXT.
 
 The host/master board must ensure the UEXT pins adhere to the [UEXT specifications](https://www.olimex.com/Products/Modules/UEXT/resources/UEXT_rev_B.pdf); for example, the `3V3` pin should be able to supply 100mA of current.
 
 ### [Adafruit breakout boards](https://www.adafruit.com/category/42)
 
-Use the **UX2-GPIO pin variant** with the following wiring:
+**UX2-GPIO pin variant** with the following wiring:
 
 * `3V3` usually connects to breakout `Vin` or `Vcc`
 * `GND` connects to breakout `GND`
@@ -85,20 +83,18 @@ Use the **UX2-GPIO pin variant** with the following wiring:
 
 ### [Sparkfun sensor boards](https://www.sparkfun.com/categories/23)
 
-Use the **UX2-GPIO pin variant** with the following wiring:
+**UX2-GPIO pin variant** with the following wiring:
 
 * `3V3` usually connects to sensor `3V3` or `Vcc`
 * `GND` connects to sensor `GND`
 * Connect Async, I2C and SPI interfaces to breakout, where applicable
 * For any remaining connections, use the GPIO (`Gx`) pins
 
-Remember that the GPIO pins can only be used once. For example, you can't connect `G0` to 3 different sensor boards, you can only connect it to one board. Similarly, the Async interface can only be connected to at most one board.
-
-If you want to connect lots of Sparkfun sensors, try and use boards that rely exclusively on I2C or SPI as those protocols are chainable. Depending on which boards you use, you might find the **UX2-I2C pin variant** a better match for your needs.
+To connect multiple Sparkfun sensors, favour those that have I2C or SPI as they allow chaining; you might find the **UX2-I2C pin variant** a better match for your needs.
 
 ### [DFRobot Gravity modules](https://www.dfrobot.com/category-36.html)
 
-Use the **UX2-GPIO pin variant**, which will allow you to connect up to 4 Gravity modules with the following wiring:
+**UX2-GPIO pin variant**, which allows 4 Gravity modules with the following wiring:
 
 * `Gx` (GPIO) connects to the Gravity outer green wire (Signal)
 * `3V3` connects to the Gravity middle red wire (Voltage or Vcc)
@@ -108,13 +104,13 @@ A common bus format for Gravity modules is to have three rows of male header (gr
 
 ### I2C devices
 
-If you require separate I2C interfaces (eg. to different sections of a circuit, or because you have multiple components with the same I2C ID), use the **UX2-I2C pin variant**, otherwise use one of the other variants.
+Any of the pin variants will suffice, unless you need additional I2C buses in which case use **UX2-I2C pin variant**.
 
 When chaining multiple I2C devices on the same interface, remember to keep track of power consumption on the `3V3` pin.
 
 ### 1-Wire devices
 
-Use the **UX2-1IS pin variant**, with the following wiring:
+**UX2-1IS pin variant**, with the following wiring:
 
 * `1W` connects to the `1-Wire` pin on the device
 * `GND` connects to the `GND` pin on the device
@@ -123,7 +119,7 @@ Use the **UX2-1IS pin variant**, with the following wiring:
 
 ### Sound-Wire components
 
-Use the **UX2-1IS pin variant**, with following wiring:
+**UX2-1IS pin variant**, with following wiring:
 
 * `SWD` connects to `Data`
 * `SWC` connects to `Clock` or `Clk`
