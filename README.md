@@ -56,7 +56,7 @@ The Micro UX2 bus is a variant that has all the same pins as UX2, but with some 
 
 ## Background
 
-I wanted to facilitate end-user modding of a sensor project I was working on and was originally planning to use UEXT bus until it became apparent that some extra features were required (interrupt and sound-wire) hence the birth of UX1.
+I wanted to facilitate end-user modding of a sensor project I was working on, and was originally planning to use UEXT bus – until it became apparent that some extra features were required (interrupt and sound-wire), hence the birth of UX1.
 
 UX1 initially had the 4 additional pins to the right of the SPI interface, with one of the pins being unused. While searching for suitable sockets it quickly became apparent that this configuration wasn't compatible with UEXT modules - unless the IDC sheath was removed from the socket (at which point cable could be put in wrong way round = doom). To rectify this, the unused and interrupt pins were moved over to the left allowing compatibility with 10-pin UEXT plugs and also 12-pin plugs for what is now known as UX2.
 
