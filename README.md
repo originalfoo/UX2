@@ -62,21 +62,21 @@ The UX2 bus is compatible with a range of 3rd party buses...
 
 > **Note:** Remember that UX2 is 3.3V based; don't connect to 5V rails as you risk causing damage to the host/master!
 
-### Olimex UEXT modules
+### [Olimex UEXT modules](https://www.olimex.com/Products/Modules/)
 
-For full compatibility with [UEXT](https://www.wikiwand.com/en/UEXT) [modules](https://www.olimex.com/Products/Modules/), a 7-way 2-row IDC socket should be used as illustrated below:
+A 7-way 2-row IDC socket should be used to accommodate an applicable connector plug as shown below:
 
 ![UX2-IDC](./ux2-idc.png)
 
-This ensures the 5x2 pin UEXT connector is inserted correctly in the middle of the 7x2 UX2 socket.
+This ensures a 5x2 pin UEXT connector is inserted correctly in the middle of the 7x2 UX2 socket. Alternatively, you could use a 5x2 socket and plug, and separate out the four outer UX2 pins (maybe with additional `GND` next to the `1W` if applicable).
 
 As pin variants only affect the outer pins, which are external to the UEXT bus, you can safely use any of the pin variants whilst retaining full compatibility with UEXT.
 
 The host/master board must ensure the UEXT pins adhere to the [UEXT specifications](https://www.olimex.com/Products/Modules/UEXT/resources/UEXT_rev_B.pdf); for example, the `3V3` pin should be able to supply 100mA of current.
 
-### Adafruit breakout boards
+### [Adafruit breakout boards](https://www.adafruit.com/category/42)
 
-For best compatibility with [Adafruit breakouts](https://www.adafruit.com/category/42), use the **UX2-GPIO pin variant** with the following wiring:
+Use the **UX2-GPIO pin variant** with the following wiring:
 
 * `3V3` usually connects to breakout `Vin` or `Vcc`
 * `GND` connects to breakout `GND`
@@ -121,7 +121,7 @@ Use the **UX2-1IS pin variant**, with the following wiring:
 
 1-Wire devices usually operate at either 3V or 5V. As such, the 3.3V offered by UX2 bus might need stepping up or down to accommodate. 1-Wire devices are often powered by putting an 800pF capacitor between their `1-Wire` and `GND` pins.
 
-### Sound-Wire Circuits
+### Sound-Wire components
 
 Use the **UX2-1IS pin variant**, with following wiring:
 
