@@ -64,7 +64,7 @@ The UX2 bus is compatible with a range of 3rd party buses...
 
 ### Olimex UEXT modules
 
-For full compatibility with [UEXT](https://www.wikiwand.com/en/UEXT) [modules](https://www.olimex.com/Products/Modules/), an IDC socket should be used as illustrated below:
+For full compatibility with [UEXT](https://www.wikiwand.com/en/UEXT) [modules](https://www.olimex.com/Products/Modules/), a 7-way 2-row IDC socket should be used as illustrated below:
 
 ![UX2-IDC](./ux2-idc.png)
 
