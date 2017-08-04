@@ -16,16 +16,16 @@ UX2 is an open source, connector-agnostic, board-to-board communication bus whic
 
 There are four variants which determine the function of the outer pins...
 
-**UX2-GPIO** – four GPIO
+**UX2-GPIO** – four GPIO  
 ![UX2-GPIO](./ux2-gpio.png)
 
-**UX2-ALT** – two GPIO, one addtional I2C
+**UX2-ALT** – two GPIO, one addtional I2C  
 ![UX2-ALT](./ux2-alt.png)
 
-**UX2-1IS** – 1-Wire, Interrupt and Sound-Wire
+**UX2-1IS** – 1-Wire, Interrupt and Sound-Wire  
 ![UX2-1IS](./ux2-1is.png)
 
-**UX2-I2C** – two additional I2C
+**UX2-I2C** – two additional I2C  
 ![UX2-I2C](./ux2-i2c.png)
 
 ### Pin reference
