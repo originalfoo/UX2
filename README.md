@@ -36,7 +36,7 @@ If pins are repurposed, it should be made clear to end-users that this is the ca
 
 ### UX2, UEXT
 
-The larger UX2 bus is an extension to, and thus fully compatible with, a UEXT bus; 10-pin UEXT connectors fit in the middle (the grey section shown on the pinout diagram above) of the 14-pin UX2 socket, leaving the additional UX2 pins (1-Wire, Interrupt, Sound-Wire) exposed either side of the UEXT connector.
+The larger UX2 bus is an extension to, and thus fully compatible with, a UEXT bus; 10-pin UEXT connectors fit in the middle (the grey section shown on the pinout diagram above) of the 14-pin UX2 socket, leaving the additional UX2 pins (`1W`, `INT`, `SWD` and `SWC`) exposed either side of the UEXT connector.
 
 The host/master board must ensure the UEXT pins adhere to the [UEXT specifications](https://www.olimex.com/Products/Modules/UEXT/resources/UEXT_rev_B.pdf) so that existing UEXT modules ([like these](https://www.olimex.com/Products/Modules/)) can be used.
 
@@ -45,7 +45,7 @@ The host/master board must ensure the UEXT pins adhere to the [UEXT specificatio
 The Micro UX2 bus is a variant that has all the same pins as UX2, but with some notable differences:
 
 * It's connector-agnostic 
-    * The host/master PCB has complete freedom to use any type of connector; useful when there's space constraints or other factors that would make the normal UX2 connector infeasible
+    * The host/master PCB has complete freedom to use any type of connector; useful when there's space or cost constraints, or other factors that would make the normal UX2 connector infeasible
     * For example, you could use [pin header](https://www.wikiwand.com/en/Pin_header) and [jumper wires](https://www.wikiwand.com/en/Jump_wire), or [ZIF connectors](https://www.wikiwand.com/en/Zero_insertion_force) and [flexible flat cable](https://www.wikiwand.com/en/Flexible_flat_cable)...
 * All pins, except `GND` and `3V3`, are disabled by default
     * Saves power and complexity in host/master circuits that use energy harvesting or have limited MCU capacity
