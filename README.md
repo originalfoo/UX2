@@ -49,7 +49,7 @@ The Micro UX2 bus is a variant that has all the same pins as UX2, but with some 
     * For example, you could use [pin header](https://www.wikiwand.com/en/Pin_header) and [jumper wires](https://www.wikiwand.com/en/Jump_wire), or [ZIF connectors](https://www.wikiwand.com/en/Zero_insertion_force) and [flexible flat cable](https://www.wikiwand.com/en/Flexible_flat_cable)...
 * All pins, except `GND` and `3V3`, are disabled by default
     * Saves power and complexity in host/master circuits that use energy harvesting or have limited MCU capacity
-    * Features are enabled by default, either via jumpers, configurations or software; you decide how that works
+    * Features are enabled on an as-needed basis, either via jumpers, configurations or software; you decide how that works
 * The max current on the `3V3` pin is implementation-dependent
     * Specification is defined by what the host/master can provide rather than what the module/slave expects
     * Particularly useful for host/master circuits that use energy harvesting or some other limited form of power
