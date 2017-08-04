@@ -17,16 +17,16 @@ UX2 is an open source, connector-agnostic, board-to-board communication bus whic
 There are four variants which determine the function of the outer pins...
 
 **UX2-GPIO** – four GPIO  
-![UX2-GPIO](./ux2-gpio.png)
+![UX2-GPIO](./img/ux2-gpio.png)
 
 **UX2-ALT** – two GPIO, one addtional I2C  
-![UX2-ALT](./ux2-alt.png)
+![UX2-ALT](./img/ux2-alt.png)
 
 **UX2-1IS** – 1-Wire, Interrupt and Sound-Wire  
-![UX2-1IS](./ux2-1is.png)
+![UX2-1IS](./img/ux2-1is.png)
 
 **UX2-I2C** – two additional I2C  
-![UX2-I2C](./ux2-i2c.png)
+![UX2-I2C](./img/ux2-i2c.png)
 
 ### Pin reference
 
@@ -47,14 +47,16 @@ There are two common ways to set the pin variant:
 1. Hard-code via firmware on the MCU
 2. Physical jumpers or dip switches (see below)
 
-With 4 variants, it is possible to allow on-board variant selection with just two jumpers or dip switches connected to host MCU:
+Two bits (`B0`, `B1`) are required to represent the 4 possible pin variants; easily achieved with jumpers or dip switches:
 
-* 0 0 = UX2-GPIO
-* 0 1 = UX2-ALT
-* 1 0 = UX2-1IS
-* 1 1 = UX2-I2C
+| B0 | B1 |  Pinout  |
+| -- | -- | -------- |
+| 0  | 0  | UX2-GPIO |
+| 0  | 1  | UX2-ALT  |
+| 1  | 0  | UX2-1IS  |
+| 1  | 1  | UX2-I2C  |
 
-If you set up the circuit so that the four selections equate to specific voltages (eg. 0V, 1V, 2V, 3V) you would only need one ADC or GPIO pin on the MCU to determine the value of both jumpers.
+Read setting with only one MCU IO? Use [R-2R resistor ladder](https://www.wikiwand.com/en/Resistor_ladder#/R.E2.80.932R_resistor_ladder_network_.28digital_to_analog_conversion.29) [DAC](https://www.wikiwand.com/en/Digital-to-analog_converter) to merge digital bits in to single analog value.
 
 ## Compatibility
 
@@ -66,7 +68,7 @@ The UX2 bus is compatible with a range of 3rd party buses...
 
 A 7-way 2-row IDC socket (shown below) accommodates both 5x2 (UEXT) and 7x2 (UX2) IDC plugs.
 
-> ![UX2-IDC](./ux2-idc.png)  
+> ![UX2-IDC](./img/ux2-idc.png)  
 > 7x2 IDC socket viewed from above
 
 As pin variants only affect the outer pins, which are external to the UEXT pins, you can safely use any of the pin variants whilst retaining full compatibility with UEXT.
