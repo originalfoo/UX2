@@ -67,7 +67,7 @@ The UX2 bus is compatible with a range of 3rd party buses...
 A 7-way 2-row IDC socket (shown below) accommodates both 5x2 (UEXT) and 7x2 (UX2) IDC plugs.
 
 > ![UX2-IDC](./ux2-idc.png)  
-> 7x2 IDC plug viewed from above
+> 7x2 IDC socket viewed from above
 
 As pin variants only affect the outer pins, which are external to the UEXT pins, you can safely use any of the pin variants whilst retaining full compatibility with UEXT.
 
