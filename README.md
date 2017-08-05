@@ -66,7 +66,7 @@ The UX2 bus is compatible with a range of 3rd party buses...
 
 > **Note:** Remember UX2 is 3.3V based; higher voltages can damage host/master.
 
-### [Olimex UEXT modules](https://www.olimex.com/Products/Modules/)
+### UEXT, [Olimex UEXT modules](https://www.olimex.com/Products/Modules/)
 
 A 7-way 2-row IDC socket (shown below) accommodates both 5x2 (UEXT) and 7x2 (UX2) IDC plugs.
 
@@ -130,6 +130,12 @@ Remember to keep track of power consumption on the `3V3` pin.
 * `SWC` connects to `Clock` or `Clk`
 
 Note: In circuit schematics, the clock connections are often omitted for sake of clarity (focus is on the data); the clock connection is always required regardless.
+
+### RS232, RS485, IRDA, USB, SD/MMC
+
+Use the UEXT bus (see UEXT section above) in conjunction with [Olimex Interface Modules](https://www.olimex.com/Products/Modules/Interface/).
+
+Any pin variant can be used as they don't affect the UEXT pins.
 
 ## License
 
