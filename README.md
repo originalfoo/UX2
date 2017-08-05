@@ -7,7 +7,7 @@ UX2 is an open source, connector-agnostic, board-to-board communication bus whic
 * [GPIO](https://www.wikiwand.com/en/General-purpose_input/output) – General Purpose Input/Output
 * [1-Wire](https://www.wikiwand.com/en/1-Wire) – for lowest possible wire count to remote circuits or sensors
 * [Interrupt](https://www.wikiwand.com/en/Interrupt) – wake master/host MCU via slave/module triggered interrupt
-* [Async](https://www.wikiwand.com/en/Asynchronous_serial_communication)
+* [UART](https://www.wikiwand.com/en/Universal_asynchronous_receiver/transmitter) / [Async](https://www.wikiwand.com/en/Asynchronous_serial_communication) - serial communication bus
 * [I2C](https://www.wikiwand.com/en/I%C2%B2C)
 * [SPI](https://www.wikiwand.com/en/Serial_Peripheral_Interface_Bus)
 * [Sound-Wire](https://www.mipi.org/specifications/soundwire)
@@ -32,11 +32,12 @@ There are four variants which determine the function of the outer pins...
 
 * `1W` – **1-Wire** data pin, to be used in conjunction with the `GND` pin
 * `INT` – **Interrupt**, allowing sensors to trigger an interrupt on host/master MCU
-* `Gx` - **GPIO**, where `x` is interface number (`0`, `1`, `2`, `3`) depending on pin variant
+* `Gx` - **GPIO**, where `x` is interface number; `0`, `1`, `2`, `3`
 * `GND` – **Ground** pin (0V)
 * `3V3` – **3.3V** power output from master; max current draw is implementation-dependent
-* `RXD`, `TXD` – **Async** interface
-* `SDAx`, `SCLx` – **I2C** interfaces, where `x` is interface number (`0`, `1`, `2`) depending on pin variant
+* `RXD`, `TXD` – **UART / Async** interface
+    * Note: Pins should be swapped on slave/module boards (eg. `Tx` from master goes to `Rx` on slave)
+* `SDAx`, `SCLx` – **I2C** interfaces, where `x` is interface number; `0`, `1`, `2`
 * `MOSI`, `MISO`, `SSEL` (slave select), `SCK` - **SPI** interface
 * `SWD`, `SWC` – **Sound-Wire** interface
 
@@ -95,7 +96,7 @@ The host/master board must ensure the UEXT pins adhere to the [UEXT specificatio
 * Connect Async, I2C and SPI interfaces to breakout, where applicable
 * For any remaining connections, use the GPIO (`Gx`) pins
 
-To connect multiple Sparkfun sensors, favour those that have I2C or SPI as they allow chaining; you might find the **UX2-I2C pin variant** a better match for your needs.
+To connect multiple Sparkfun sensors, favour those that have I2C or SPI as they allow chaining.
 
 ### [DFRobot Gravity modules](https://www.dfrobot.com/category-36.html)
 
@@ -111,7 +112,9 @@ A common bus format for Gravity modules is to have three rows of male header (gr
 
 Any of the pin variants will suffice, unless you need additional I2C buses in which case use **UX2-I2C pin variant**.
 
-Remember to keep track of power consumption on the `3V3` pin.
+Note: An alternative to multiple I2C interfaces is to use an [I2C address changer](http://hackaday.com/2017/02/17/ltc4316-is-the-i2c-babelfish/)
+
+Remember to keep track of power consumption on the `3V3` pin, and if you are having problems with long wires [try this](http://hackaday.com/2017/02/08/taking-the-leap-off-board-an-introduction-to-i2c-over-long-wires/).
 
 ### 1-Wire devices
 
