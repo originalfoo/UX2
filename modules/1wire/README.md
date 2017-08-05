@@ -13,14 +13,14 @@ The UX2-1IS pin variant includes a 1-Wire interface:
 
 ## Wiring
 
-The 1-Wire interface actually comprises of two wires, `1W` (data and power) and `GND`, often utilising shieded CAT5 network cable:
+The 1-Wire interface actually comprises of two wires, `1W` (data and power) and `GND`:
 
 * Master `1W` connects to the `1-Wire` pin on the slave
 * Master `GND` connects to the `GND` pin on the slave
 
-In many cases, slaves are configured for parasitic powering by leeching from the `1W` cable via a capacitor connected between `1W` and `GND`. Slaves often operate at either 3V or 5V; you might require a voltage level translator (see [App Note 4477](https://www.maximintegrated.com/en/an4477) on manufacturer website for details).
+Slaves often operate at either 3V or 5V; you might require a voltage level translator (see [App Note 4477](https://www.maximintegrated.com/en/an4477) on manufacturer website for details).
 
-1-Wire facilitates several wiring topologies as summarised below. There are different electrical characteristics for each topology which can impair reliability if not properly managed. For detailed information, please see [Tutorual 148](https://www.maximintegrated.com/en/app-notes/index.mvp/id/148) on the manufacturer website.
+1-Wire facilitates several wiring topologies as summarised below. In many cases, a shielded CAT5 network cable will be suitable, especially for larger networks. There are different electrical characteristics for each topology which can impair reliability if not properly managed (see [Tutorual 148](https://www.maximintegrated.com/en/app-notes/index.mvp/id/148) on the manufacturer website for details).
 
 The **linear topology** has a main cable which stretches from the master to the farthest slave (sensor). Additional slaves are connected along the main cable, often by short stretches of wire:
 
