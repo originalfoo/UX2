@@ -27,19 +27,19 @@ For devices that require I2S, use the UX2-GPIO pin variant and [configure the GP
 
 The wiring will depend on the devices you are connecting to, but generally:
 
-| UX2                          | Adafruit              |
-| ---------------------------- | --------------------- |
-| ![3V3](../../pin/3v3.png)    | `Vin`, `Vcc` or `3Vo` |
-| ![GND](../../pin/gnd.png)    | `GND`                 |
-| ![SDAx](../../pin/sda.png)   | `SDA`                 |
-| ![SCLx](../../pin/scl.png)   | `SCL`                 |
-| ![MISO](../../pin/miso.png)  | `MISO`                |
-| ![MOSI](../../pin/mosi.png)  | `MOSI`                |
-| ![SCK](../../pin/sck.png)    | `SCK`                 |
-| ![SSEL](../../pin/ssel.png)  | `SSEL`                |
-| ![RXD](../../pin/rxd.png)    | `TXD` (not `RXD`)     |
-| ![TXD](../../pin/txd.png)    | `RXD` (not `TXD`)     |
-| ![Gx](../../pin/g.png)       | Remaining pins        |
+| UX2                          | Adafruit          |
+| ---------------------------- | ----------------- |
+| ![3V3](../../pin/3v3.png)    | `Vin`, `Vcc`      |
+| ![GND](../../pin/gnd.png)    | `GND`             |
+| ![SDAx](../../pin/sda.png)   | `SDA`             |
+| ![SCLx](../../pin/scl.png)   | `SCL`             |
+| ![MISO](../../pin/miso.png)  | `MISO`            |
+| ![MOSI](../../pin/mosi.png)  | `MOSI`            |
+| ![SCK](../../pin/sck.png)    | `SCK`             |
+| ![SSEL](../../pin/ssel.png)  | `SSEL`            |
+| ![RXD](../../pin/rxd.png)    | `TXD` (not `RXD`) |
+| ![TXD](../../pin/txd.png)    | `RXD` (not `TXD`) |
+| ![Gx](../../pin/g.png)       | Remaining pins    |
 
 Remember that each GPIO (`Gx`) pin can only be connected to one target device. Likewise, the UART (`RXD` and `TXD`) pins can only be connected to one device.
 
