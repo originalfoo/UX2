@@ -23,6 +23,7 @@ There are four variants which determine the function of the outer pins...
 ![UX2-ALT](./img/ux2-alt.png)
 
 **UX2-1IS** – 1-Wire, Interrupt and Sound-Wire  
+Note: Not suitable for hosts that rely on energy harvesting  
 ![UX2-1IS](./img/ux2-1is.png)
 
 **UX2-I2C** – two additional I2C  
