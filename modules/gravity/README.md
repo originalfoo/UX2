@@ -15,11 +15,11 @@ UX2-GPIO – 4 x GPIO:
 
 There are two types of Gravity connector - Analogue (blue) and Digital (green), each using a 3 wire connector:
 
-| UX2   | Gravity                   |
-| ----- | ------------------------- |
-| `Gx`  | `A` (blue) or `D` (green) |
-| `3V3` | `VCC` (red)               |
-| `GND` | `GND` (black)             |
+| UX2                       | Gravity                   |
+| ------------------------- | ------------------------- |
+| ![Gx](../../pin/g.png)    | `A` (blue) or `D` (green) |
+| ![3V3](../../pin/3v3.png) | `VCC` (red)               |
+| ![GND](../../pin/gnd.png) | `GND` (black)             |
 
 As GPIO (`Gx`) can be either analog or digital, you can connect up to 4 Gravity modules to a UX2-GPIO.
 
