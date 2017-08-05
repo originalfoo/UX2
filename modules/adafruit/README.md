@@ -39,7 +39,7 @@ The wiring will depend on the devices you are connecting to, but generally:
 | ![SSEL](../../pin/ssel.png)  | `SSEL`                |
 | ![RXD](../../pin/rxd.png)    | `TXD` (not `RXD`)     |
 | ![TXD](../../pin/txd.png)    | `RXD` (not `TXD`)     |
-| ![Gx](../../pin/txd.png)     | Remaining pins        |
+| ![Gx](../../pin/g.png)       | Remaining pins        |
 
 Remember that each GPIO (`Gx`) pin can only be connected to one target device. Likewise, the UART (`RXD` and `TXD`) pins can only be connected to one device.
 
