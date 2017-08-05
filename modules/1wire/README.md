@@ -28,7 +28,7 @@ The **linear topology** has a main cable which stretches from the master to the 
 
 The **stubbed topology** is similar to linear, but intermediate slaves are connected to the main wire by longer cables (usually with lengths in excess of 3m):
 
-![1w-stubbed](./1w-linear.png)
+![1w-stubbed](./1w-stubbed.png)
 
 The **star topology** has slaves connected by cables to a central point:
 
