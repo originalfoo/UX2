@@ -21,6 +21,8 @@ The UX2-ALT variant provides 2 GPIO, 2 I2C and 1 SPI:
 
 ![UX2-ALT](../../img/ux2-alt.png)
 
+All 3 variants also provide UART / Async interface.
+
 For devices that use I2S, use the UX2-GPIO pin variant and [configure the GPIOs for I2S](../I2S/README.md).
 
 ## Wiring
