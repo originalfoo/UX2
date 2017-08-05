@@ -1,4 +1,4 @@
-# [Adafruit breakout boards]()
+# Adafruit devices
 
 > Adafruit produce a wide range of breakout and sensor boards, all of which are open source and accompanied by extensive documentation and tutorials.
 
