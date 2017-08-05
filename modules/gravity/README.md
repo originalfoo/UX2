@@ -7,7 +7,7 @@
 
 ## Pin variant
 
-UX2-GPIO – four GPIO:
+UX2-GPIO – 4 x GPIO:
 
 ![UX2-GPIO](../../img/ux2-gpio.png)
 
