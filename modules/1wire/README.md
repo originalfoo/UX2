@@ -5,6 +5,8 @@
 * [Wikipedia article](https://www.wikiwand.com/en/1-Wire)
 * [Manufacturer website](https://www.maximintegrated.com/en/products/digital/one-wire.html)
 
+Note: 1-Wire is not suitable for low power hosts which rely on energy harvesting.
+
 ## Pin variant
 
 The UX2-1IS pin variant includes a 1-Wire interface:
