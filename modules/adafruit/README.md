@@ -9,15 +9,15 @@
 
 Adafruit boards use a variety of interfaces, most of which are GPIO and/or I2C/SPI.
 
-The UX2-GPIO provides 4 GPIO, 1 I2C, 1 SPI, 1 UART:
+UX2-GPIO – 4 x GPIO, 1 x UART, 1 x I2C, 1 x SPI:
 
 ![UX2-GPIO](../../img/ux2-gpio.png)
 
-The UX2-I2C provides 3 I2C, 1 SPI, 1 UART:
+UX2-I2C – 3 x I2C, 1 x UART, 1 x SPI:
 
 ![UX2-I2C](../../img/ux2-i2c.png)
 
-The UX2-ALT variant provides 2 GPIO, 2 I2C, 1 SPI, 1 UART:
+UX2-ALT – 2 x GPIO, 1 x UART, 2 x I2C, 1 x SPI:
 
 ![UX2-ALT](../../img/ux2-alt.png)
 
