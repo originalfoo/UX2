@@ -1,8 +1,10 @@
 # I2C Protocol
 
-> intro
+> I²C (Inter-Integrated Circuit), pronounced I-squared-C or I-two-C, is a multi-master, multi-slave, packet switched, single-ended, serial computer bus.
 
-* links
+* [Wikipedia Article](https://www.wikiwand.com/en/I%C2%B2C)
+* [I2C Bus Specification](http://www.nxp.com/docs/en/user-guide/UM10204.pdf)
+* [NXP I2C Portfolio](http://www.nxp.com/products/interfaces/ic-bus-portfolio:MC_41735) - extensive range of I2C ICs, sensors, etc.
 
 ## IMPORTANT
 
@@ -46,6 +48,16 @@ The I2C standard uses 4 wires; `SDA` (data), `SCL` (clock), `3V3` and `GND`:
 It's important to use the same interface pair for each I2C bus. For example, if you're using the UX2-I2C pin variant which provides 3 x I2C interfaces, you could use `SDA1` and `SCL1` together as a pair, but not `SDA1` and `SCL2` (`SCL2` must be paired with `SDA2`).
 
 ## Topology
+
+I2C is most commonly used in a linear topology like so:
+
+![I2C Linear Topology](./i2c.png)
+
+There are [multiplexer and switch ICs](http://www.nxp.com/products/interfaces/ic-bus-portfolio/ic-multiplexers-switches:MC_41851) which provide more advanced topologies should the need arise.
+
+The maximal number of nodes is limited by the address space and also by the total bus capacitance of 400 pF, which restricts practical communication distances to a few meters:
+
+There are [ICs which change I2C address](http://hackaday.com/2017/02/17/ltc4316-is-the-i2c-babelfish/) to help overcome cases where multiple devices with the same address are required.
 
 You can extend the range of an I2C network using an [Extender Module](https://shop.controleverything.com/collections/bus-handlers/products/long-distance-i2c-bus-extender) (essentially a repeater node) or even with some [clever](http://hackaday.com/2017/02/08/taking-the-leap-off-board-an-introduction-to-i2c-over-long-wires/), [wiring](https://hackaday.com/2017/03/31/an-introduction-to-differential-i%C2%B2c/).
 
