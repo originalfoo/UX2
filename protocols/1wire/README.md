@@ -52,3 +52,8 @@ Because the `1W` pin is held high for most of the time, and slave devices will o
 It is strongly advised to use an MCU or FPGA which has hardware support for 1-Wire. Alternatively, there are dedicated 1-Wire driver ICs available from the manufacturer. For more details, please see [App Note 4206](https://www.maximintegrated.com/en/an4206) on the manufacturer website.
 
 If the end-user is using both the 1-Wire and UEXT interfaces at the same time, the UEXT connector will consume the `GND` pin. As such, it's recommended to have an additional `GND` pin to the left of the `1W` pin.
+
+## See also:
+
+* [Protocols Overview](../README.md)
+* [UX2 Overview](../../README.md)
