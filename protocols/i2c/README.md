@@ -43,7 +43,9 @@ The I2C standard uses 4 wires; `SDA` (data), `SCL` (clock), `3V3` and `GND`:
 | ![3V3](../../pin/3v3.png)  | `VCC`         |
 | ![GND](../../pin/gnd.png)  | `GND`         |
 
-It's important to use the same interface pair for each I2C bus. For example, if you're using the UX2-I2C pin variant which provides 3 x I2C interfaces, you have to use `SDA1` and `SCL1` together as a pair, you can't use `SDA1` and `SCL2` as `SCL2` has to be paired with `SDA1`.
+It's important to use the same interface pair for each I2C bus. For example, if you're using the UX2-I2C pin variant which provides 3 x I2C interfaces, you could use `SDA1` and `SCL1` together as a pair, but not `SDA1` and `SCL2` (`SCL2` must be paired with `SDA2`).
+
+## Topology
 
 You can extend the range of an I2C network using an [Extender Module](https://shop.controleverything.com/collections/bus-handlers/products/long-distance-i2c-bus-extender) (essentially a repeater node) or even with some [clever](http://hackaday.com/2017/02/08/taking-the-leap-off-board-an-introduction-to-i2c-over-long-wires/), [wiring](https://hackaday.com/2017/03/31/an-introduction-to-differential-i%C2%B2c/).
 
