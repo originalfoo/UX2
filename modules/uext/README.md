@@ -47,7 +47,7 @@ UEXT cabe should be attached to the centre 10x2 pins (leaving 1x2 pins either si
 A 7-way 2-row IDC socket (shown below) accommodates both 5x2 (UEXT) and 7x2 (UX2) IDC plugs.
 
 > ![UX2-IDC](./ux2-idc.png)  
-> 7x2 IDC socket viewed from above
+> 7x2 IDC socket viewed from above, with UX2-1IS pin variant active
 
 The host/master board must ensure the UEXT pins adhere to the [UEXT specifications](https://www.olimex.com/Products/Modules/UEXT/resources/UEXT_rev_B.pdf); for example, the `3V3` pin should be able to supply 100mA of current.
 
