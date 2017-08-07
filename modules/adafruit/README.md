@@ -48,3 +48,9 @@ The I2C and SPI interfaces support chaining of multiple devices. Keep an eye on 
 ## Host Considerations
 
 TBC
+
+## See also
+
+* [UX2 Overview](../../README.md)
+* [Modules](../README.md)
+* [Protocols](../../protocols/README.md)
