@@ -3,7 +3,7 @@
 > The System Management Bus (abbreviated to SMBus or SMB) is a single-ended simple two-wire bus for the purpose of lightweight communication. It is derived from I²C for communication with low-bandwidth devices on a motherboard, especially power related chips such as a laptop's rechargeable battery subsystem; other devices might include temperature, fan or voltage sensors, lid switches and clock chips. PCI add-in cards may connect to an SMBus segment.
 
 * [Wikipedia Article](https://www.wikiwand.com/en/System_Management_Bus)
-* [I2C Bus Specification](http://www.nxp.com/docs/en/user-guide/UM10204.pdf)
+* [SMBus Specification](http://smbus.org/specs/)
 
 SMBus is almost completely compatible with I2C; the notable differences, including voltage, current and clock, can be found in the link below:
 
