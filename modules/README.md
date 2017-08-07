@@ -9,6 +9,7 @@ The interface requirements vary depending on the manufacturer; to help you get s
 * [Gravity (DFRobot)](./gravity/README.md)
 * [Grove (Seeed Studio)](./grove/README.md)
 * [SparkFun](./sparkfun/README.md)
+* [UEXT (Olimex)](./uext/README.md)
 
 See also:
 
