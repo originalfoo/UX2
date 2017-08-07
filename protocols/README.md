@@ -2,15 +2,13 @@
 
 The following protocols are provided by the UX2 bus:
 
-| Protocol                              | Notes |
-| ------------------------------------- | ----- |
-| [1-WIRE](./1wire/README.md)           |       |
-| GPIO                                  |       |
-| [I2C](./i2c/README.md)                |       |
-| UART / Async                          |       |
-| SOUND-WIRE                            |       |
-| SPI                                   |       |
-| UEXT                                  |       |
+* [1-WIRE](./1wire/README.md)
+* GPIO
+* [I2C](./i2c/README.md)
+* UART / Async
+* SOUND-WIRE
+* SPI
+* UEXT
 
 ## See also:
 
