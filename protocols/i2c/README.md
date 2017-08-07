@@ -1,4 +1,4 @@
-# I2C Protocol
+#  I²C / I2C / IIC
 
 > I²C (Inter-Integrated Circuit), pronounced I-squared-C or I-two-C, is a multi-master, multi-slave, packet switched, single-ended, serial computer bus.
 
