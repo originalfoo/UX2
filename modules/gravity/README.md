@@ -30,3 +30,9 @@ Gravity hosts use color-coded male header. The illustration below shows 2 x Digi
 ![Gravity](./gravity.png)
 
 If you provide color-coded header, ensure that analog pins have ADC/DAC capability, and ensure that digital pins have PWM capability.
+
+## See also
+
+* [UX2 Overview](../../README.md)
+* [Modules](../README.md)
+* [Protocols](../../protocols/README.md)
