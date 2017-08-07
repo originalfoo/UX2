@@ -21,6 +21,8 @@ Note: Not suitable for hosts that rely on energy harvesting
 **UX2-I2C** – two additional I2C  
 ![UX2-I2C](./img/ux2-i2c.png)
 
+See also: [Tips on pin variant selection](./pin/README.md)
+
 ### Pins
 
 | UX2                                           | Protocol                              |
@@ -33,26 +35,6 @@ Note: Not suitable for hosts that rely on energy harvesting
 | ![SDAx](./pin/sda.png) ![SCLx](./pin/scl.png) | [I2C](./protocols/i2c/README.md) / [SMBus](./protocols/smbus/README.md) |
 | ![MISO](./pin/miso.png) ![MOSI](./pin/mosi.png) ![SCK](./pin/sck.png) ![SSEL](./pin/ssel.png)  | SPI |
 | ![SWD](./pin/swd.png) ![SWC](./pin/swc.png)   | SOUND-WIRE                            |
-
-### Pin variant selection
-
-There are two common ways to set the pin variant:
-
-1. Hard-code via firmware on the MCU
-2. Physical jumpers or dip switches (see below)
-
-Two bits (`B0`, `B1`) are required to represent the 4 possible pin variants; easily achieved with jumpers or dip switches:
-
-| B0 | B1 |  Pinout  |
-| -- | -- | -------- |
-| 0  | 0  | UX2-GPIO |
-| 0  | 1  | UX2-ALT  |
-| 1  | 0  | UX2-1IS  |
-| 1  | 1  | UX2-I2C  |
-
-Read setting with only one MCU IO? Use [R-2R resistor ladder](https://www.wikiwand.com/en/Resistor_ladder#/R.E2.80.932R_resistor_ladder_network_.28digital_to_analog_conversion.29) [DAC](https://www.wikiwand.com/en/Digital-to-analog_converter) to merge digital bits in to single analog value:
-
-![2-bit DAC using R-2R resitor ladder](./img/2-bit-dac.png)
 
 ## [Protocols](./protocols/README.md)
 
