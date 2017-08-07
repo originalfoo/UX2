@@ -53,5 +53,6 @@ The host/master board must ensure the UEXT pins adhere to the [UEXT specificatio
 
 ## See also
 
-* [Protocols](../../protocols/README.md)
 * [UX2 Overview](../../README.md)
+* [Modules](../README.md)
+* [Protocols](../../protocols/README.md)
