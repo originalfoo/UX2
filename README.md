@@ -23,16 +23,16 @@ Note: Not suitable for hosts that rely on energy harvesting
 
 ### Pins
 
-| UX2                                                   | Protocol          |
-| ----------------------------------------------------- | ----------------- |
-| ![3V3](../../pin/3v3.png) ![GND](../../pin/gnd.png)   | POWER             |
-| ![!W](../../pin/1w.png)                               | 1-WIRE            |
-| ![!INT](../../pin/int.png)                            | INTERRUPT         |
-| ![!Gx](../../pin/g.png)                               | GPIO              |
-| ![RXD](../../pin/rxd.png) ![TXD](../../pin/txd.png)   | UART / Asynch     |
-| ![SDAx](../../pin/sda.png) ![SCLx](../../pin/scl.png) | I2C               |
-| ![MISO](../../pin/miso.png) ![MOSI](../../pin/mosi.png) ![SCK](../../pin/sck.png) ![SSEL](../../pin/ssel.png)  | SPI |
-| ![SWD](../../pin/swd.png) ![SWC](../../pin/swc.png)   | I2C               |
+| UX2                                           | Protocol          |
+| --------------------------------------------- | ----------------- |
+| ![3V3](./pin/3v3.png) ![GND](./pin/gnd.png)   | POWER             |
+| ![!W](./pin/1w.png)                           | 1-WIRE            |
+| ![!INT](./pin/int.png)                        | INTERRUPT         |
+| ![!Gx](./pin/g.png)                           | GPIO              |
+| ![RXD](./pin/rxd.png) ![TXD](./pin/txd.png)   | UART / Asynch     |
+| ![SDAx](./pin/sda.png) ![SCLx](./pin/scl.png) | I2C               |
+| ![MISO](./pin/miso.png) ![MOSI](./pin/mosi.png) ![SCK](./pin/sck.png) ![SSEL](./pin/ssel.png)  | SPI |
+| ![SWD](./pin/swd.png) ![SWC](./pin/swc.png)   | I2C               |
 
 ### Pin variant selection
 
