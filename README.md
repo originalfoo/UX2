@@ -23,7 +23,7 @@ Note: Not suitable for hosts that rely on energy harvesting
 
 See also: [Tips on pin variant selection](./pin/README.md)
 
-### Pins
+### Pins / Protocols
 
 | UX2                                           | Protocol                              |
 | --------------------------------------------- | ------------------------------------- |
