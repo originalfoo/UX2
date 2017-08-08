@@ -44,7 +44,7 @@ The I2C interface supports chaining of multiple devices. Keep an eye on `3V3` pi
 
 ## Host Considerations
 
-Ensure GPIO (`Gx`) pins support ADC/DAC for analogue and PWM for digital.
+Ensure GPIO (`Gx`) pins support ADC/DAC and PWM.
 
 ## See also
 
