@@ -14,4 +14,4 @@ The interface requirements vary depending on the manufacturer; to help you get s
 See also:
 
 * [UX2 Overview](../README.md)
-* [Protocols](../protocol/README.md)
+* [Protocols](../protocols/README.md)
