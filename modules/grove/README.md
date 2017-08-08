@@ -26,7 +26,7 @@ UX2-ALT – 2 x GPIO, 1 x UART, 2 x I2C, 1 x SPI:
 Grove devices are usually connected with 4-wire cables:
 
 1. Data 1 (yellow wire)
-2. Data 2 (white wire)
+2. Data 2 (white wire) - sometimes not used
 3. `VCC` (red wire)
 4. `GND` (black wire)
 
