@@ -65,6 +65,10 @@ You can extend the range of an I2C network using an [Extender Module](https://sh
 
 ## See also:
 
+* [UX2 Overview](../../README.md)
 * [SMBus](../smbus/README.md) – almost completely compatible with I2C.
 * [Protocols Overview](../README.md)
-* [UX2 Overview](../../README.md)
+* [Modules](../../modules/README.md)
+    * [Adafruit](../../modules/adafruit/README.md)
+    * [ControlEverything](../../modules/controleverything/README.md)
+    * [Grove](../../modules/grove/README.md)
