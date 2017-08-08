@@ -23,7 +23,14 @@ UX2-ALT – 2 x GPIO, 1 x UART, 2 x I2C, 1 x SPI:
 
 ## Wiring
 
-The wiring will depend on the devices you are connecting to, but generally:
+Grove devices are usually connected with 4-wire cables:
+
+1. Data 1 (yellow wire)
+2. Data 2 (white wire)
+3. `VCC` (red wire)
+4. `GND` (black wire)
+
+The Data wires (yellow and white) will always be the same protocol; either I2C (`SCL` and `SDA`), UART/Async (`RX` and `TX`), Digital (`D0` and `D1`) or Analogue (`A0` and `A1`):
 
 | UX2                          | Grove                      |
 | ---------------------------- | -------------------------- |
