@@ -54,6 +54,7 @@ SMBus is designed for use within a circuit board, rather than remote sensing or 
 
 ## See also:
 
-* [I2C](../i2c/README.md) – almost completely compatible with SMBus.
-* [Protocols Overview](../README.md)
 * [UX2 Overview](../../README.md)
+* [Protocols](../README.md)
+    * [I2C](../i2c/README.md) – almost completely compatible with SMBus.
+* [Modules](../../modules/README.md)
