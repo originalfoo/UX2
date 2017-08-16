@@ -6,7 +6,9 @@
 
 ## Pin Variants
 
-All pin variants provide an SPI interface which has a single slave select pin (`SSEL`). If you need more slave selelects, the UX2-GPIO or UX2-ALT variants provide `Gx` (GPIO) pins that can be utilised as additional slave selectors.
+All pin variants provide an SPI interface which has a single slave select pin (`SSEL`).
+
+If you need more slave selelects, the UX2-GPIO or UX2-ALT variants provide `Gx` (GPIO) pins that can be utilised as additional slave selectors.
 
 UX2-GPIO – 4 x GPIO, 1 x UART, 1 x I2C, 1 x SPI: Max 5 slaves
 
