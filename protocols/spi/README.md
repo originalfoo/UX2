@@ -3,6 +3,7 @@
 > The Serial Peripheral Interface bus (SPI) is a synchronous serial communication interface specification used for short distance communication, primarily in embedded systems. SPI devices communicate in full duplex mode using a master-slave architecture with a single master. The master device originates the frame for reading and writing. Multiple slave devices are supported through selection with individual slave select (SSEL) lines.
 
 * [Wikipedia Article](https://www.wikiwand.com/en/Serial_Peripheral_Interface_Bus)
+* [Debugging SPI](http://hackaday.com/2016/07/01/what-could-go-wrong-spi/)
 
 ## Pin Variants
 
