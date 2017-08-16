@@ -10,19 +10,19 @@ All pin variants provide an SPI interface which has a single slave select pin (`
 
 If you need more slave selelects, the UX2-GPIO or UX2-ALT variants provide `Gx` (GPIO) pins that can be utilised as additional slave selectors.
 
-UX2-GPIO – 4 x GPIO, 1 x UART, 1 x I2C, 1 x SPI: Max 5 slaves
+Max 5 slaves; UX2-GPIO – 4 x GPIO, 1 x UART, 1 x I2C, 1 x SPI:
 
 ![UX2-GPIO](../../img/ux2-gpio.png)
 
-UX2-ALT – 2 x GPIO, 1 x UART, 2 x I2C, 1 x SPI: Max 3 slaves
+Max 3 slaves; UX2-ALT – 2 x GPIO, 1 x UART, 2 x I2C, 1 x SPI:
 
 ![UX2-ALT](../../img/ux2-alt.png)
 
-UX2-1IS – 1 x 1-WIRE, 1 x INTERRUPT, 1 x UART, 1 x I2C, 1 x SPI, 1 x SOUND-WIRE: Max 1 slave
+Max 1 slave; UX2-1IS – 1 x 1-WIRE, 1 x INTERRUPT, 1 x UART, 1 x I2C, 1 x SPI, 1 x SOUND-WIRE:
 
 ![UX2-1IS](../../img/ux2-1is.png)
 
-UX2-I2C – 3 x I2C, 1 x UART, 1 x SPI: Max 1 slave
+Max 1 slave; UX2-I2C – 3 x I2C, 1 x UART, 1 x SPI:
 
 ![UX2-I2C](../../img/ux2-i2c.png)
 
