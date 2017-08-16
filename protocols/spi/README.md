@@ -63,7 +63,7 @@ This topology is generally only used with combinations of devices that are desig
 ## See also:
 
 * [UX2 Overview](../../README.md)
-* [Protocols Overview](../README.md)
+* [Protocols](../README.md)
 * [Modules](../../modules/README.md)
     * [Adafruit](../../modules/adafruit/README.md)
     * [Sparkfun](../../modules/sparkfun/README.md)
