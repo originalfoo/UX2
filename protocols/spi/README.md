@@ -26,7 +26,7 @@ UX2-I2C – 3 x I2C, 1 x UART, 1 x SPI:
 
 ## Wiring
 
-The I2C standard uses 4 wires; `SDA` (data), `SCL` (clock), `3V3` and `GND`:
+The SPI interface uses at least 6 wires, and GPIO `Gx` pins can be used as additional slave selects if required:
 
 | UX2                         | SPI                           |
 | --------------------------- | ----------------------------- |
