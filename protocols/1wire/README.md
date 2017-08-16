@@ -55,5 +55,6 @@ If the end-user is using both the 1-Wire and UEXT interfaces at the same time, t
 
 ## See also:
 
-* [Protocols Overview](../README.md)
 * [UX2 Overview](../../README.md)
+* [Protocols](../README.md)
+* [Modules](../../modules/README.md)
