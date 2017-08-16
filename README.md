@@ -2,7 +2,7 @@
 
 > UNDER CONSTRUCTION - LIABLE TO CHANGE
 
-UX2 is an open source, connector-agnostic, board-to-board communication bus which supports the following protocols (depending on pin variant):
+UX2 is an open source, connector-agnostic, board-to-board communication bus. It supports multiple interface protocols, facilitating connection to a vast range of commerically available add-on modules from popular venodors.
 
 ## Quick Reference
 
@@ -33,17 +33,14 @@ See also: [Tips on pin variant selection](./pin/README.md)
 | ![3V3](./pin/3v3.png) ![GND](./pin/gnd.png)   | POWER                                 |
 | ![RXD](./pin/rxd.png) ![TXD](./pin/txd.png)   | UART / Asynch                         |
 | ![SDAx](./pin/sda.png) ![SCLx](./pin/scl.png) | [I2C](./protocols/i2c/README.md) / [SMBus](./protocols/smbus/README.md) |
-| ![MISO](./pin/miso.png) ![MOSI](./pin/mosi.png) ![SCK](./pin/sck.png) ![SSEL](./pin/ssel.png)  | SPI |
+| ![MISO](./pin/miso.png) ![MOSI](./pin/mosi.png) ![SCK](./pin/sck.png) ![SSEL](./pin/ssel.png)  | [SPI](./protocols/spi/README.md) |
 | ![SWD](./pin/swd.png) ![SWC](./pin/swc.png)   | SOUND-WIRE                            |
 
 ## [Protocols](./protocols/README.md)
 
 * [GPIO](https://www.wikiwand.com/en/General-purpose_input/output) – General Purpose Input/Output
-* [I2C](./protocols/i2c/README.md)
-* [1-Wire](./protocols/1wire/README.md)
 * [Interrupt](https://www.wikiwand.com/en/Interrupt) – wake master/host MCU via slave/module triggered interrupt
 * [UART](https://www.wikiwand.com/en/Universal_asynchronous_receiver/transmitter) / [Async](https://www.wikiwand.com/en/Asynchronous_serial_communication) - serial communication bus
-* [SPI](https://www.wikiwand.com/en/Serial_Peripheral_Interface_Bus)
 * [Sound-Wire](https://www.mipi.org/specifications/soundwire)
 
 ## Modules
