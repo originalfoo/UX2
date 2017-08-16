@@ -50,7 +50,7 @@ Like I2C, SMBus can have several devices attached to it in a linear topology:
 
 ![SMBus Linear Topology](./smbus.png)
 
-SMBus is designed for use within a circuit board, rather than remote sensing so wire lengths should be kept short. If you need longer range, use [I2C](../i2c/README.md) instead.
+SMBus is designed for use within a circuit board, rather than remote sensing or inter-device comms; wire lengths should be kept short. If you need longer range, use [I2C](../i2c/README.md) instead.
 
 ## See also:
 
